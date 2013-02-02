@@ -69,6 +69,53 @@ class Database {
 
     } //end getCharityInfo
 
+    /**
+     * Gets the information about the supplied user from the database.
+     *
+     * @param string $username
+     * @return string[]
+     */
+    public function getUserInfo($username) {
+
+        $sql = "SELECT firstName, lastName, email, discription,
+            profilePicture, badges FROM `users`
+            WHERE username = '" . $this->sanitize($username) . "' LIMIT 1";
+
+        $result = $this->dB->query($sql);
+
+        if ($this->dB->error != '')
+            die("Database Error");
+
+        $result = $result->fetch_assoc();
+
+        if (count($result) == 0)
+            throw new Exception($ex);
+
+        return $result;
+
+    } //end getCharityInfo
+
+    /**
+     * Gets and returns a random charity object from the database.
+     *
+     * @return Charity A charity object.
+     */
+    public function getRandomCharity() {
+
+        $sql = "SELECT * FROM `charities` ORDER BY RAND() LIMIT 1";
+
+        $result = $this->dB->query($sql);
+
+        if ($this->dB->error != '')
+            die("Database Error");
+
+        $result = $result->fetch_assoc();
+
+        $c = new Charity($result['handle']);
+
+        return $c;
+    } //end getRandomCharity
+
 } //end Databases
 
 ?>
