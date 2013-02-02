@@ -13,6 +13,8 @@
  * Main function starts below 'Application' class.
  */
 
+require_once ('includes/functions.php');
+
 /**
  * Provides the necessary functions for displaying the charity page.
  *
@@ -47,12 +49,14 @@ class Charity {
      */
     public function __construct($handle) {
 
-        $this->dB = new Databases();
+        $this->dB = new Database();
 
         $info = $this->dB->getCharityInfo($handle);
 
+        $this->handle = $handle;
+
         foreach ($info as $key => $value)
-            $this->key = $value;
+            $this->$key = $value;
 
     } //end __construct
 
@@ -62,8 +66,8 @@ class Charity {
          return $this->commonName;
      }
 
-     public function getDiscription() {
-         return $this->discription;
+     public function getDescription() {
+         return $this->description;
      }
 
      public function getPhotoFilename() {
@@ -78,8 +82,13 @@ class Charity {
 
 //$handle = explode("\/\\", $_SERVER['SCRIPT_NAME']);
 
+if (empty($_GET['charityName']))
+    die('Can\'t access access this page directly.');
+
 $handle = $_GET['charityName'];
 
-$c = new Charity($handle[1]) //test
+$c = new Charity($handle) //test
 
 ?>
+
+<?= $c->getCommonName(); ?>

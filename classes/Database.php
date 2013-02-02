@@ -19,7 +19,7 @@
  * @author Corbin Schwalm
  * @version 1.0
  */
-class Databases {
+class Database {
 
     /** @var Mysqli The database object. */
     private $dB;
@@ -53,11 +53,19 @@ class Databases {
      */
     public function getCharityInfo($handle) {
 
-        $sql = "SELECT * FROM `charities` WHERE handle = '$this->sanitize($handle)' LIMIT 1";
+        $sql = "SELECT * FROM `charities` WHERE handle = '" . $this->sanitize($handle) . "' LIMIT 1";
 
         $result = $this->dB->query($sql);
 
-        return $result->fetch_array();
+        if ($this->dB->error != '')
+            die("Database Error");
+
+        $result = $result->fetch_assoc();
+
+        if (count($result) == 0)
+            throw new Exception($ex);
+
+        return $result;
 
     } //end getCharityInfo
 

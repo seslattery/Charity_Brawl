@@ -9,12 +9,12 @@
 
 /* The database connection information. */
 
-define('DB_HOSTNAME', '');
+define('DB_HOSTNAME', 'localhost');
 
-define('DB_USERNAME', '');
+define('DB_USERNAME', 'root');
 
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'test');
 
-define('DB_DATABASE', '');
+define('DB_DATABASE', 'smartsys_charity');
 
 ?>
