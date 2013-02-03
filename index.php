@@ -18,25 +18,26 @@ $dB = new Database();
 
 $randomCharities = array(6);
 
-for ($i = 0; $i < 5; $i++)
-    $randomCharities[$i] = $dB->getRandomCharity();
+$randomCharities = $dB->getRandomCharity(6);
+
+//print_r($randomCharities[1]);exit;
 
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700"
     media="screen" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"
+    <link href="css/bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"
     />
-    <link href="css/bootstrap-responsive.css" media="screen" rel="stylesheet"
+    <link href="css/bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet"
     type="text/css" />
-    <link href="css/fontawesome.css" media="screen" rel="stylesheet" type="text/css"
+    <link href="css/bootstrap/css/fontawesome.css" media="screen" rel="stylesheet" type="text/css"
     />
-    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css"
+    <link href="css/bootstrap/css/style.css" media="screen" rel="stylesheet" type="text/css"
     />
     <!-- Typekit fonts require an account and a kit containing the fonts used.
     see https://typekit.com/plans for details. <script type="text/javascript"
@@ -45,11 +46,11 @@ for ($i = 0; $i < 5; $i++)
 -->
     <title>Charity Brawl</title>
   </head>
-  
+
   <body>
 
 	<div class="nav-home">
-        <img class="image  pull-left" src="img/logo-2.png">
+        <img class="image  pull-left" src="css/bootstrap/img/logo-2.png">
         <ul class="nav pull-right">
           <li><a href="<?= $_SERVER['SERVER_NAME']; ?>" class="a-1">Home<br /></a>
           </li>
@@ -77,38 +78,38 @@ for ($i = 0; $i < 5; $i++)
         <span class="span4">
           <h2 class="heading heading-1"><?= $randomCharities[0]->getCommonName(); ?></h2>
           <p class="p-2"><?= $randomCharities[0]->getShortDescription(); ?></p>
-          <img class="image  pull-left" src= <?= $randomCharities[0]->getPhotoFilename(); ?>>
+          <img class="image  pull-left" src="<?= $randomCharities[0]->getPhotoFilename(); ?>">
         </span>
         <span class="span4">
           <h2 class="heading heading-1"><?= $randomCharities[1]->getCommonName(); ?>
             <br>
           </h2>
           <p class="p-2"><?= $randomCharities[1]->getShortDescription(); ?></p>
-          <img class="image  pull-left" src= <?= $randomCharities[1]->getPhotoFilename(); ?>>
+          <img class="image  pull-left" src="<?= $randomCharities[1]->getPhotoFilename(); ?>">
         </span>
         <span class="span4">
           <h2 class="heading heading-1"><?= $randomCharities[2]->getCommonName(); ?></h2>
           <p class="p-2"><?= $randomCharities[2]->getShortDescription(); ?></p>
-          <img class="image  pull-left" src= <?= $randomCharities[2]->getPhotoFilename(); ?>>
+          <img class="image  pull-left" src="<?= $randomCharities[2]->getPhotoFilename(); ?>">
         </span>
       </div>
       <div class="row-fluid">
         <span class="span4">
           <h2 class="heading heading-1"><?= $randomCharities[3]->getCommonName(); ?></h2>
           <p class="p-2"><?= $randomCharities[3]->getShortDescription(); ?></p>
-          <img class="image  pull-left" src= <?= $randomCharities[3]->getPhotoFilename(); ?>>
+          <img class="image  pull-left" src="<?= $randomCharities[3]->getPhotoFilename(); ?>">
         </span>
         <span class="span4">
           <h2 class="heading heading-1"><?= $randomCharities[4]->getCommonName(); ?>
             <br>
           </h2>
           <p class="p-2"><?= $randomCharities[4]->getShortDescription(); ?></p>
-          <img class="image  pull-left" src= <?= $randomCharities[4]->getPhotoFilename(); ?>>
+          <img class="image  pull-left" src="<?= $randomCharities[4]->getPhotoFilename(); ?>">
         </span>
         <span class="span4">
           <h2 class="heading heading-1"><?= $randomCharities[5]->getCommonName(); ?></h2>
           <p class="p-2"><?= $randomCharities[5]->getShortDescription(); ?></p>
-          <img class="image  pull-left" src= <?= $randomCharities[5]->getPhotoFilename(); ?>>
+          <img class="image  pull-left" src="<?= $randomCharities[5]->getPhotoFilename(); ?>">
         </span>
       </div>
     </div>
@@ -117,7 +118,7 @@ for ($i = 0; $i < 5; $i++)
         <div class="row-fluid">
           <span class="span12">
             <div class="pull-left">
-              <p>© AwesomeCo</p>
+              <p>&copy; Schwalm | Norys | Fruth | Slattery</p>
             </div>
             <ul class="nav nav-pills pull-right">
               <li><a href="#" class="a-2">About</a>
@@ -133,8 +134,8 @@ for ($i = 0; $i < 5; $i++)
     </div>
 <style>
 	.nav-home {
-	  background: none; 
-	  clear: none; 
+	  background: none;
+	  clear: none;
 	  border: none;
 	  z-index: 1;
 	  margin: 0px;
@@ -183,17 +184,17 @@ for ($i = 0; $i < 5; $i++)
 	.container-fluid.container-fluid-1 .row-fluid button {
 	  float: right;
 	  clear: none;
-	  margin: 0px 10px 10px 0;	
+	  margin: 0px 10px 10px 0;
 	}
 	div.container-1 {
 		margin: 0px;
 		padding: 0px;
 	}
-	
+
 </style>
-    
+
   </body>
-  
+
 
 
 </html>

@@ -12,20 +12,4 @@
  *
  */
 
-require_once ('includes/functions.php');
-
-
-//$handle = explode("\/\\", $_SERVER['SCRIPT_NAME']);
-
-if (empty($_GET['charityName']))
-    die('Can\'t access access this page directly.');
-
-$handle = $_GET['charityName'];
-
-$c = new Charity($handle);
-
-require_once('header.php');
-
 ?>
-
-<?= $c->getCommonName(); ?>

@@ -14,18 +14,26 @@
 
 require_once ('includes/functions.php');
 
+if ($_POST['username'] && $_POST['password']) {
 
-//$handle = explode("\/\\", $_SERVER['SCRIPT_NAME']);
+    $dB = new Database();
 
-if (empty($_GET['charityName']))
-    die('Can\'t access access this page directly.');
+    if ($dB->authenticate('username', 'password') === TRUE) {
 
-$handle = $_GET['charityName'];
+        $_SESSION['username'] = $username;
 
-$c = new Charity($handle);
+        $_SESSION['key'] = LOGGED_IN_KEY;
 
-require_once('header.php');
+        header('Location: index.php');
+
+        exit;
+    }
+
+     header('Location: index.php?error=TRUE');
+
+     exit;
+}
+
+require_once ('header.php');
 
 ?>
-
-<?= $c->getCommonName(); ?>

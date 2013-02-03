@@ -33,6 +33,10 @@ class Charity {
     /** @var string The charity description. */
     private $description;
 
+   /** @var string The charity short description. */
+    private $shortDescription;
+
+
     /** @var string URL to the charity image. */
     private $photoFilename;
 
@@ -69,6 +73,10 @@ class Charity {
 
      public function getDescription() {
          return $this->description;
+     }
+
+     public function getShortDescription() {
+         return $this->shortDescription;
      }
 
      public function getPhotoFilename() {

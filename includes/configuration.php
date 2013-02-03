@@ -17,4 +17,6 @@ define('DB_PASSWORD', 'test');
 
 define('DB_DATABASE', 'smartsys_charity');
 
+define('LOGGED_IN_KEY', 'njkfw90rnski');
+
 ?>
