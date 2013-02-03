@@ -35,15 +35,15 @@
         padding-top: 60px;
       }
     </style>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <link href="css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="css/bootstrap/js/bootstrap-dropdown.js"></script>
+    <link href="css/bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css"
     />
-    <link href="css/bootstrap-responsive.css" media="screen" rel="stylesheet"
+    <link href="css/bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet"
     type="text/css" />
-    <link href="css/fontawesome.css" media="screen" rel="stylesheet" type="text/css"
+    <link href="css/bootstrap/css/fontawesome.css" media="screen" rel="stylesheet" type="text/css"
     />
-    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css"
+    <link href="css/bootstrap/css/style.css" media="screen" rel="stylesheet" type="text/css"
     />
     <!-- Typekit fonts require an account and a kit containing the fonts used.
     see https://typekit.com/plans for details. <script type="text/javascript"
