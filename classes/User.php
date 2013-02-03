@@ -33,7 +33,7 @@ class User {
     private $email;
 
     /** @var string Text bio for the user. */
-    private $discription;
+    private $bio;
 
     /**@var string The URL of the profile picture. */
     private $profilePicture;
@@ -89,8 +89,8 @@ class User {
         return $this->lastName;
     }
 
-    public function getDiscription() {
-        return $this->discription;
+    public function getBio() {
+        return $this->bio;
     }
 
     public function getProfilePicture() {

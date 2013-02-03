@@ -77,7 +77,7 @@ class Database {
      */
     public function getUserInfo($username) {
 
-        $sql = "SELECT firstName, lastName, email, discription,
+        $sql = "SELECT firstName, lastName, email, bio,
             profilePicture, badges FROM `users`
             WHERE username = '" . $this->sanitize($username) . "' LIMIT 1";
 
