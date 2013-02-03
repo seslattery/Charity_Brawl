@@ -47,6 +47,9 @@ class Charity {
      */
     public function __construct($handle) {
 
+        if ($handle === NULL)
+            return NULL;
+
         $this->dB = new Database();
 
         $info = $this->dB->getCharityInfo($handle);

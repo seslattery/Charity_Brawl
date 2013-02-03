@@ -63,7 +63,7 @@ class Database {
         $result = $result->fetch_assoc();
 
         if (count($result) == 0)
-            throw new Exception($ex);
+            return NULL;
 
         return $result;
 
