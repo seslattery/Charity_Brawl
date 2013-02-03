@@ -41,6 +41,9 @@ class User {
     /** @var Badges[] Array of Badge objects. */
     private $badges;
 
+    /** @var int Total amount of points for user. */
+    private $totalPoints;
+
     /**
      * Default consturctor. Accepts an username to create the user object.
      *
@@ -96,6 +99,14 @@ class User {
 
     public function getBadges() {
         return $this->badges;
+    }
+
+    public function getTotalPoints() {
+        return $this->totalPoints;
+    }
+
+    public function getEmail() {
+        return $this->email;
     }
 
 } //end User

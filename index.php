@@ -16,11 +16,9 @@ require_once ('includes/functions.php');
 
 $dB = new Database();
 
-$randomCharities = array(3);
+$randomCharities = array(6);
 
-for ($i = 0; $i < 3; $i++)
-    $randomCharities[0] = $dB->getRandomCharity();
+for ($i = 0; $i < 5; $i++)
+    $randomCharities[$i] = $dB->getRandomCharity();
 
 ?>
-
-<?= $randomCharities[0]; ?>
